@@ -6,15 +6,13 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="HandheldFriendly" content="true">
-	<!-- <link rel="stylesheet" href="css/normalize.css"> -->
-	<link rel="stylesheet" href="dist/style.css">
+	<link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
 	<title>React Native Template</title>
 </head>
 
 <body>
 	<div id="root"></div>
-	<h1 class="title"></h1>
-	<script src="dist/main.js"></script>
+	<script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
 </body>
 
 </html>
