@@ -1,6 +1,6 @@
-# react-native-template
+# react-typescript-template
 
-simple react app
+simple react app with typescript
 
 ## platform
 
@@ -8,11 +8,20 @@ inherit from my [webpack-template](https://github.com/dimitriskot/webpack-templa
 
 ## languages
 
-inherit from my [webpack-template](https://github.com/dimitriskot/webpack-template)
+- html
+- sass
+- typescript
 
 ## JS-library
 
 [React](https://reactjs.org/)
+
+## webpack loaders
+
+- awesome-typescript-loader
+- style-loader
+- css-loader
+- sass-loader
 
 ## run scripts
 
