@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "jsx": "react",
+    "target": "es6",
+    "lib": ["es2017", "dom"],
+    "noImplicitAny": true
+  },
+  "include": ["src/"]
+}

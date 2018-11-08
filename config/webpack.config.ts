@@ -1,8 +1,9 @@
-const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
-const { CheckerPlugin } = require("awesome-typescript-loader");
+import * as path from "path";
+import CleanWebpackPlugin from "clean-webpack-plugin";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import { CheckerPlugin } from "awesome-typescript-loader";
+import { Configuration, HotModuleReplacementPlugin } from "webpack";
 
 const isProduction = process.env.NODE_ENV === "production";
 const mode = isProduction ? "production" : "development";
@@ -10,12 +11,12 @@ const mode = isProduction ? "production" : "development";
 console.log(process.env.NODE_ENV);
 console.log(isProduction);
 
-const config = {
+const config: Configuration = {
   mode,
   entry: "./src/index.tsx",
   output: {
     path: path.resolve("dist"),
-    filename: "main.[chunkhash:6].js"
+    filename: "main.[hash:6].js"
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"]
@@ -25,11 +26,11 @@ const config = {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: "awesome-typescript-loader",
-        options: {
-          useBabel: true,
-          babelCore: "@babel/core"
-        }
+        use: ["awesome-typescript-loader"]
+        // options: {
+        //   useBabel: true,
+        //   babelCore: "@babel/core"
+        // }
       },
       {
         test: /\.scss$/,
@@ -62,7 +63,8 @@ const config = {
         useShortDoctype: true
       }
     })
+    // !isProduction && new HotModuleReplacementPlugin()
   ]
 };
 
-module.exports = config;
+export default config;
